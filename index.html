@@ -3,9 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Price calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <div class="container">
+    <div class="form-section">
+  
+      <h2>Price calculator</h2>
+  
+      <!-- Seção: Sobre o Designer -->
+      <div class="subsection">
+        <h3>Dados do Designer</h3>
+  
+        <div class="form-group">
+          <label for="senioridade">Senioridade</label>
+          <select id="senioridade">
+            <option>Selecione seu nível de senioridade</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="horas-uteis">Horas Úteis</label>
+          <input type="text" id="horas-uteis" placeholder="Horas disponíveis no mês">
+        </div>
+  
+        <div class="form-group">
+          <label for="custos-mensais">Custos Mensais</label>
+          <input type="text" id="custos-mensais" placeholder="Soma dos custos mensais (ex: 1000)">
+        </div>
+      </div>
+
+      <div class="divider"></div>
+  
+      <!-- Seção: Sobre o Projeto -->
+      <div class="subsection">
+        <h3>Dados do Projeto</h3>
+  
+        <div class="form-group">
+          <label for="perfil">Perfil do Cliente</label>
+          <select id="perfil">
+            <option>Selecione o perfil do cliente</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="regiao">Região</label>
+          <select id="regiao">
+            <option>Selecione a região do cliente</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="complexidade">Complexidade</label>
+          <select id="complexidade">
+            <option>Selecione a complexidade do projeto</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="horas-estimadas">Horas Estimadas</label>
+          <input type="text" id="horas-estimadas" placeholder="Quantas horas o projeto exige?">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="margem">Margem de Lucro (%)</label>
+        <input type="text" id="margem" placeholder="Exemplo: 20%">
+      </div>
+  
+    </div>
+
+     <!-- Resultado -->
+  
+    <div class="result-section">
+      <div class="resultado-calculo">
+        <h3>Resultado</h3>
+        <div class="value" id="valor-total">R$ 0,00</div>
+        <div class="sub-values">
+          <div>
+            <strong id="valor-hora">R$ 0,00</strong><br>
+            Valor da hora
+          </div>
+          <div>
+            <strong id="horas-usadas">0h</strong><br>
+            Horas estimadas
+          </div>
+        </div>
+        <button class="btn" id="btn-calcular">Calcular</button>
+      </div>
+
+      <div class="divider"></div>
+  
+      <!-- Histórico -->
+      <div class="resultado-historico">
+        <div class="history">
+          <h4>Histórico</h4>
+          <div id="history-list">
+          </div>
+          <div class="see-all">Ver tudo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <script src="java.js"></script>    
 </body>

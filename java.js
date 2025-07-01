@@ -7,14 +7,14 @@
 // VALOR DA HORA
 
 // Custos Mensais (Somatório)
-function calcular_custos_totais(despesas) { // Parâmetro
+function calcular_custos_totais(despesas) {
   return despesas.impostos
        + despesas.contador
        + despesas.softwares
        + despesas.homeoffice
        + despesas.backups
        + despesas.cursos
-       + despesas.equipamentos;            // Propriedades (Chave e valor)
+       + despesas.equipamentos;
 }
 
 // Margem de Lucro (Cálculo)
@@ -57,11 +57,8 @@ function calcular_regiao_cliente(regiao) {
 }
 
 // Valor da hora (Cálculo)
-function calcular_valor_hora(custos, horas_uteis, 
-margem, senioridade, complexidade, perfil, regiao) {
-
-  const piso = custos / horas_uteis;                 // Quanto você precisa cobrar por cada hora apenas para cobrir seus custos fixos.
-
+function calcular_valor_hora(custos, horas_uteis, margem, senioridade, complexidade, perfil, regiao) {
+  const piso = custos / horas_uteis;
   return piso
     * calcular_margem_lucro(margem)
     * calcular_senioridade(senioridade)
@@ -113,4 +110,22 @@ console.log(`Valor por hora: R$ ${valor_hora.toFixed(2)}`);
 console.log(`Horas estimadas: ${horas_estimadas}h`);
 console.log(`Valor total do projeto: R$ ${valor_total_projeto.toFixed(2)}`);
 
-// Fim! :)
+
+// DOM E EVENTOS (ENTREGÁVEL 2)
+
+// Carregamento Html
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Valor final
+    const valorTotal = valorHora * horasEstimadas;
+
+    // Resultados na tela
+    const campoValorHora = document.getElementById('valor-hora');
+    const campoHoras = document.getElementById('horas-usadas');
+    const campoTotal = document.getElementById('valor-total');
+
+    campoValorHora.textContent = `R$ ${valorHora.toFixed(2)}`;
+    campoHoras.textContent = `${horasEstimadas}h`;
+    campoTotal.textContent = `R$ ${valorTotal.toFixed(2)}`;
+    
+  });
